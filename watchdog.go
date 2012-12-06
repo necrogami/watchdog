@@ -12,7 +12,7 @@ import (
 
 type Application struct {
 	Hostname    string
-	Time        string
+	Time        time.Time
 	DF          *DF
 	CPU         *CPUS
 	LoadAverage *LoadAverage
@@ -169,7 +169,7 @@ func main() {
 	b := &DF{}
 	a := &Application{
 		Hostname:    hostname,
-		Time:        time.Now().UTC().String(),
+		Time:        time.Now().UTC(),
 		DF:          b,
 		CPU:         c,
 		LoadAverage: d,

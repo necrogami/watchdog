@@ -4,7 +4,7 @@ import (
 	"code.google.com/p/goconf/conf"
 	"fmt"
 	"github.com/cloudfoundry/gosigar"
-	"labix.org/v2/mgo"
+	"gopkg.in/mgo.v2"
 	"os"
 	"path"
 	"time"
@@ -40,7 +40,6 @@ type CPUS struct {
 }
 
 type CpuStat struct {
-	ID      string
 	User    uint64
 	Nice    uint64
 	Sys     uint64
@@ -194,7 +193,6 @@ func main() {
 
 	for _, cpu := range cpulist.List {
 		c.Data = append(c.Data, &CpuStat{
-			ID:      cpu.Name,
 			User:    cpu.User,
 			Nice:    cpu.Nice,
 			Sys:     cpu.Sys,

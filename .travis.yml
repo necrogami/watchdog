@@ -1,4 +1,5 @@
 language: go
+sudo: false
 
 install:
   - go get code.google.com/p/goconf/conf
